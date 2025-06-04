@@ -1,0 +1,40 @@
+.adminloginheading { font-size: $font-size-xxl; color: $accent; text-align: center; color: $primary; }
+
+.adminloginsection {
+  padding: $paddingvertical;
+
+  .loginform {
+    @include flexcolumn;
+    justify-content: space-between;
+    height: 27rem;
+    color: $primary;
+    font-size: $font-size-xl;
+
+    div {
+      width: 100%;
+
+      .loginusername, .loginpassword {
+        padding: $padding-sm;
+        width: 100%;
+        outline: none;
+        border: none;
+        transition: ease-in 0.3s;
+        color: $accent;
+        letter-spacing: 0.4rem;
+        font-weight: bold;
+      }
+      .loginusername:focus, .loginpassword:focus { background-color: $tertiary; }
+
+      .loginusername, .loginpassword { background-color: $dominant; }
+
+      .loginbtn { @extend .loginusername; background-color: $accent; color: $dominant; cursor: pointer; }
+      .loginbtn:focus { background-color: $accent; }
+      .loginbtn:hover { background-color: $primary; }
+
+    }
+
+  }
+
+}
+
+@import "adminloginpagemq";

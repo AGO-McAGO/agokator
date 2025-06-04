@@ -1,0 +1,20 @@
+<section class="up">
+
+  <div>
+    <h1> You're about to delete (<%= photo.galleryimagecaption %>) </h1>
+    <p> This action is irreversible. </p>
+  </div>
+
+  <div class="adminformdiv">
+    <form id="deleteuser" action="/deletegalleryimage/<%= photo._id %>" enctype="multipart/form-data" method="POST">
+      <input type="hidden" name="deleteimage" id="deleteimage" value="<%= photo.galleryimage %>">
+      
+      <img src="/img/uploads/gallerypage/<%= photo.galleryimage %>" alt="<%= photo.galleryimagecaption %>" width="275" height="200" />
+      
+      <br /> <br />
+      
+      <div class="col"> <input type="submit" name="submit" value="Delete Photo" id="submitdelete"> </div>
+    </form>
+  </div>
+
+</section>

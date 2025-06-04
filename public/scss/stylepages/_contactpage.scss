@@ -1,0 +1,78 @@
+.contactheading {
+  border-bottom: 0.0625rem solid $primary;
+  padding-top: 3.125rem;
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("../../img/assists/galleryii.jpg") no-repeat center /cover;
+  height: 20rem;
+  color: $white;
+  text-align: center;
+}
+
+.contactinfo {
+  @include card;
+  @include flexcolumn;
+  gap: 5rem;
+  background-color: $dominant;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: $base-padding;
+  
+  .contactdetails {
+    @include card;
+    width: 100%;
+
+    h2 { text-align: center; }
+
+    h3 { font-size: $font-size-lg; color: $primary; }
+
+    .info {
+      @include flexcolumn;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+  }
+
+  .contactform {
+    @extend .contactdetails;
+
+    h2 { text-align: center; }
+
+    form {
+      @include flexcolumn;
+      gap: 1rem;
+      padding-top: $padding-sm;
+
+      .contactname, .emailphone, .contactmessage, .contactsend, .contactemail, .contactphone {
+        width: 100%;
+    
+        .nameinput, .emailinput, .phoneinput, .sendbtn  {
+          height: 2.7rem;
+          outline: none;
+          border: $border-width-sm solid $primary;
+          border-radius: $border-radius-sm;
+          resize: none;
+          font-weight: bold;
+          width: inherit;
+          padding-left: $padding-sm;
+        }
+    
+        .messageinput {
+          @extend .nameinput;
+          height: 7rem;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            background-color: $tertiary;
+        }
+        
+      }
+      .emailphone { @include flexcolumn; gap: 1rem;}
+
+      .sendbtn { @include formsendbutton; }
+
+      .sendbtn:hover { @include formsendbuttonhover; }
+    }
+  }
+}
+
+@import "contactpagemq";

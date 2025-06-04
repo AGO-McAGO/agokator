@@ -1,0 +1,49 @@
+.adminformdiv {
+  padding: $paddingvertical;
+  padding-bottom: 5rem;
+
+  form {
+    @include flexcolumn;
+    gap: 2rem;
+
+    div {
+      width: 90%;
+      font-size: $font-size-lg;
+
+      .admininput { width: 100%; padding: $base-padding; font-size: $font-size-lg; }
+
+      #submit { @include formsendbutton; border-radius: 0; }
+      #submit:hover { @include formsendbuttonhover; }
+
+      #submitdelete { @include formsendbutton; background-color: $error; color: $black; font-size: $font-size-lg; border-radius: 0; }
+      #submitdelete:hover { color: $dominant; }
+
+    }
+
+  }
+
+}
+
+//! gallery
+.datecreated { padding: 0.2rem; background-color: $dominant; color: $accent; }
+
+.adminupdatedeletebuttons {
+  @include flexrow;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  .updategalleryphoto {
+    background-color: $accent;
+    color: $dominant;
+    padding: 0.4rem;
+    cursor: pointer;
+    transition: ease-in 0.4s;
+    font-weight: bold;
+  }
+
+  .deletegalleryphoto { @extend .updategalleryphoto; background-color: $error; color: $black; }
+
+  .updategalleryphoto:hover { background-color: $primary; }
+  .deletegalleryphoto:hover { background-color: $error; color: $dominant; }
+
+}

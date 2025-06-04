@@ -1,0 +1,35 @@
+.galleryphotos {
+  columns: 10rem 1;
+  column-gap: 1rem;
+  margin-top: 1rem;
+  padding: $paddingvertical;
+
+  .galleryimage {
+    break-inside: avoid;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    box-shadow: $base-box-shadow;
+    
+    figure {
+      display: flex;
+      flex-direction: column;
+      
+      img { border-radius: $base-border-radius $base-border-radius 0 0; width: 100%;  }
+    
+      figcaption {
+        display: inline-block;
+        background-color: $backgrounddarken;
+        color: $white;
+        width: 100%;
+        text-align: center;
+        padding: $padding-sm;
+        border-radius: 0 0 $base-border-radius $base-border-radius;
+      }
+
+    }
+
+  }
+
+}
+
+@import "gallerypagemq";

@@ -1,0 +1,17 @@
+@mixin flexrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flexcolumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin center {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+}

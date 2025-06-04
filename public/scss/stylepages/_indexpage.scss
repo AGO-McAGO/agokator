@@ -1,0 +1,122 @@
+.hero {
+    @include card;
+    @include flexcolumn;
+    gap: 1rem;
+    background-color: $dominant;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: $base-padding;
+
+    .heromessage {
+        width: 100%;
+
+        .messages { margin-top: 2rem; margin-bottom: 2rem; }
+
+        a { @include buttons; padding: $base-padding; font-size: $font-size-lg; }
+
+        a:hover { background-color: $primary; color: $accent; }
+    }
+
+    img { border-radius: $base-border-radius; }
+
+    figcaption { color: $accent; }
+}
+
+.skill {
+    @include card;
+    @include flexcolumn;
+    gap: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: $base-padding;
+    padding-top: $padding-xl;
+    padding-bottom: $padding-xl;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("../../img/assists/gradiii.jpg") fixed no-repeat center /cover;
+
+    .business, .data, .advert {
+        @include card;
+        width: 100%;
+        padding: $padding-lg;
+        
+        .iconheading {
+            @include flexcolumn;
+    
+            .icon { font-size: $font-size-xxl; }
+        }
+    }
+
+    .business, .advert { background: $dominant; }
+    .data { background: $primary; color: $dominant; }
+}
+
+.contact {
+    @include card;
+    @include flexcolumn;
+    background-color: $dominant;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: $base-padding;
+    
+    form {
+        @include card;
+        @include flexcolumn;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+            .inputs {
+                @include flexrow;
+                justify-content: flex-start;
+                width: 100%;
+    
+                .fullname, .email, .message {
+                    outline: none;
+                    width: 17rem;
+                    border: $border-width-sm solid $primary;
+                    border-radius: 0 $base-border-radius $base-border-radius 0;
+                    resize: none;
+                    font-weight: bold;
+                }
+    
+                .icon, .fullname, .email { height: 2.7rem; }
+
+                input:focus, textarea:focus { outline: none; background-color: $tertiary; border: none; }
+    
+                .icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $dominant;
+                    color: $primary;
+                    width: 2.5rem;
+                    border: $border-width-sm solid $primary;
+                    border-radius: $base-border-radius 0 0 $base-border-radius;
+                }
+    
+                .icontext { @extend .icon; }
+
+                .icontext, .message, .textarea { height: 7rem; }
+            }
+            
+            .inputsend {
+                width: 100%;
+                
+                .send { @include formsendbutton; }
+                
+                .send:hover { @include formsendbuttonhover; }
+            }
+        }
+
+    img { border-radius: $base-border-radius $base-border-radius 0 0; width: 15rem; }
+
+    figcaption {
+        background-color: $whatsapp;
+        color: $white;
+        width: 15rem;
+        text-align: center;
+        padding: $padding-sm;
+        border-radius: 0 0 $base-border-radius $base-border-radius ;
+    }
+}
+
+@import "indexpagemq";

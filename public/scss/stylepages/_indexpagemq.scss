@@ -1,0 +1,49 @@
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+    .hero {
+        @include flexrow;
+        flex-direction: row;
+        align-items: flex-start;
+    
+        .heromessage { width: 70%; }
+    }
+
+    .skill {
+        @include flexrow;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+        background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("../../img/assists/gradi.jpg") fixed no-repeat center /cover;
+    
+        .business, .data, .advert { width: 30%; }
+    }
+
+    .contact {
+        @include flexrow;
+        flex-direction: row;
+        align-items: flex-start;
+
+        form {
+            width: 100%;
+            .fullname, .email, .message { width: 24rem; }
+        }
+    }
+
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+
+    .fullname, .email, .message { width: 35rem !important; }
+
+}
+
+
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+    .fullname, .email, .message { width: 45rem !important; }
+
+}

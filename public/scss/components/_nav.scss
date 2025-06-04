@@ -1,0 +1,60 @@
+//? burger button
+.navbutton {
+  @include flexcolumn;
+  justify-content: space-around;
+  background-color: $primary;
+  border-radius: $base-border-radius;
+  cursor: pointer;
+  height: 3rem;
+  width: 3.5rem;
+  transition: all 0.4s;
+  border: none;
+  outline: none;
+  z-index: 4;
+}
+
+.navbutton.open {
+  background-color: $black;
+}
+
+//? burger
+.linei, .lineii, .lineiii {
+  width: 3rem;
+  height: 0.2rem;
+  transition: all 0.4s;
+  background: $black;
+}
+
+//? burger becomes letter X
+.navbutton.open .linei { transform: rotate(-45deg) translate(-0.7rem, 0.75rem); background-color: $primary; }
+.navbutton.open .lineii { width: 0; opacity: 0; }
+.navbutton.open .lineiii { transform: rotate(45deg) translate(-0.7rem, -0.75rem); background-color: $primary; }
+
+nav {
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7));
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3; 
+  transition: all 0.5s;
+}
+
+nav.open {
+  @include flexcolumn;
+}
+
+@keyframes navanimation {
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@import "listitems";

@@ -1,0 +1,43 @@
+.goback a { font-size: $font-size-lg; color: $dominant; }
+
+.adminbuttons {
+  @include flexrow;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+
+  button {
+    @include buttons;
+    font-size: $base-font-size;
+    padding: 0.4rem 0.2rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .logoutbtn button { background-color: $error; }
+}
+
+.up {
+  margin-bottom: 10rem;
+  height: 70vh;
+  
+  .adminactionbtns {
+    @include flexcolumn;
+    height: 20rem;
+    justify-content: space-between;
+
+    li {
+
+      a[href$="gallerypage"] button { display: block; }
+      a[href$="gallerypage"] button:first-child { margin-bottom: 1rem; }
+      
+      button { @include buttons; width: 15rem; font-weight: bold; }
+      button:hover { @include formsendbuttonhover; }
+
+    }
+
+  }
+
+}
+
+@import "errorpages";
+@import "adminuploads";

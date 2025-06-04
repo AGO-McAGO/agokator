@@ -1,0 +1,1129 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 5rem;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-size: 1rem;
+  background: radial-gradient(at center, #00ced1, #ffffff);
+  font-weight: bold;
+  font-family: "Times New Roman", monospace;
+  line-height: 1.7;
+  color: #0a0438;
+}
+
+#adminbody {
+  background: radial-gradient(at center, #0a0438, #c1f3f4);
+}
+
+.header, main, footer, .center {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0rem;
+  margin-top: 5rem;
+}
+footer .socialmedia {
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+}
+footer .socialmedia ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: space-between;
+  padding: 1rem 0rem;
+}
+footer .socialmedia ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.7, -0.55, 0.271, 2.55);
+}
+footer .socialmedia ul li .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #ffffff;
+  border-radius: 0.4rem;
+  padding: 0.2rem 1.5rem;
+  box-shadow: 0 0.7rem 0.7rem rgba(0, 0, 0, 0.5);
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.7, -0.55, 0.271, 2.55);
+}
+footer .socialmedia ul li .tooltip::before {
+  content: "";
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  left: 50%;
+  bottom: -0.5rem;
+  transform: translateX(-50%) rotate(45deg);
+  background: #ffffff;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.7, -0.55, 0.271, 2.55);
+}
+footer .socialmedia ul li .icon, footer .socialmedia ul li .contact form .inputs .icontext, .contact form .inputs footer .socialmedia ul li .icontext {
+  position: relative;
+  z-index: 1;
+  height: 3rem;
+  width: 3rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0.7rem 0.7rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: block;
+  transition: all 0.4s cubic-bezier(0.7, -0.55, 0.271, 2.55);
+}
+footer .socialmedia ul li .icon i, footer .socialmedia ul li .contact form .inputs .icontext i, .contact form .inputs footer .socialmedia ul li .icontext i {
+  font-size: 2rem;
+  transition: 0.4s;
+  line-height: 1.8rem;
+}
+footer .socialmedia ul li:hover .tooltip {
+  top: -2.99rem;
+  opacity: 1;
+  pointer-events: auto;
+}
+footer .socialmedia ul li:hover i {
+  color: #ffffff;
+}
+footer .socialmedia ul li:hover .icon, footer .socialmedia ul li:hover .contact form .inputs .icontext, .contact form .inputs footer .socialmedia ul li:hover .icontext, footer .socialmedia ul li:hover .tooltip {
+  text-shadow: 0rem -0.07rem 0rem rgba(0, 0, 0, 0.5);
+}
+footer .socialmedia ul .linkedin {
+  color: #0077b5;
+}
+footer .socialmedia ul .whatsapp {
+  color: #25d366;
+}
+footer .socialmedia ul .xtwitter {
+  color: #000000;
+}
+footer .socialmedia ul .twitter {
+  color: #1DA1F2;
+}
+footer .socialmedia ul .instagram {
+  color: #e1306c;
+}
+footer .socialmedia ul .facebook {
+  color: #3b5998;
+}
+footer .socialmedia ul .linkedin:hover .icon, footer .socialmedia ul .linkedin:hover .contact form .inputs .icontext, .contact form .inputs footer .socialmedia ul .linkedin:hover .icontext, footer .socialmedia ul .linkedin:hover .tooltip, footer .socialmedia ul .linkedin:hover .tooltip:before {
+  background-color: #0077b5;
+}
+footer .socialmedia ul .whatsapp:hover .icon, footer .socialmedia ul .whatsapp:hover .contact form .inputs .icontext, .contact form .inputs footer .socialmedia ul .whatsapp:hover .icontext, footer .socialmedia ul .whatsapp:hover .tooltip, footer .socialmedia ul .whatsapp:hover .tooltip:before {
+  background-color: #25d366;
+}
+footer .socialmedia ul .xtwitter:hover .icon, footer .socialmedia ul .xtwitter:hover .contact form .inputs .icontext, .contact form .inputs footer .socialmedia ul .xtwitter:hover .icontext, footer .socialmedia ul .xtwitter:hover .tooltip, footer .socialmedia ul .xtwitter:hover .tooltip:before {
+  background-color: #000000;
+}
+footer .socialmedia ul .twitter:hover .icon, footer .socialmedia ul .twitter:hover .contact form .inputs .icontext, .contact form .inputs footer .socialmedia ul .twitter:hover .icontext, footer .socialmedia ul .twitter:hover .tooltip, footer .socialmedia ul .twitter:hover .tooltip:before {
+  background-color: #1DA1F2;
+}
+footer .socialmedia ul .instagram:hover .icon, footer .socialmedia ul .instagram:hover .contact form .inputs .icontext, .contact form .inputs footer .socialmedia ul .instagram:hover .icontext, footer .socialmedia ul .instagram:hover .tooltip, footer .socialmedia ul .instagram:hover .tooltip:before {
+  background-color: #e1306c;
+}
+footer .socialmedia ul .facebook:hover .icon, footer .socialmedia ul .facebook:hover .contact form .inputs .icontext, .contact form .inputs footer .socialmedia ul .facebook:hover .icontext, footer .socialmedia ul .facebook:hover .tooltip, footer .socialmedia ul .facebook:hover .tooltip:before {
+  background-color: #3b5998;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+}
+header .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 4;
+}
+header .header .logoul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 0.2rem;
+  z-index: 4;
+}
+header .header .logoul img {
+  border-radius: 0.5rem;
+  height: 5rem;
+}
+header .header .logoul .name {
+  color: #ffffff;
+  text-shadow: 1px 1px 2px #0a0438, 0 0 25px #c1f3f4, 0 0 5px #00ced1;
+  letter-spacing: 0.1rem;
+}
+
+.navbutton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #00ced1;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  height: 3rem;
+  width: 3.5rem;
+  transition: all 0.4s;
+  border: none;
+  outline: none;
+  z-index: 4;
+}
+
+.navbutton.open {
+  background-color: #000000;
+}
+
+.linei, .lineii, .lineiii {
+  width: 3rem;
+  height: 0.2rem;
+  transition: all 0.4s;
+  background: #000000;
+}
+
+.navbutton.open .linei {
+  transform: rotate(-45deg) translate(-0.7rem, 0.75rem);
+  background-color: #00ced1;
+}
+
+.navbutton.open .lineii {
+  width: 0;
+  opacity: 0;
+}
+
+.navbutton.open .lineiii {
+  transform: rotate(45deg) translate(-0.7rem, -0.75rem);
+  background-color: #00ced1;
+}
+
+nav {
+  background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.7));
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  transition: all 0.5s;
+}
+
+nav.open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes navanimation {
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.linksUl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+  gap: 2rem;
+  font-size: 1.5rem;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+  animation-name: navanimation;
+  animation-duration: 0.7s;
+  position: relative;
+}
+.linksUl a {
+  width: 100%;
+  color: #00ced1;
+  transition: all 0.5s;
+}
+.linksUl a:hover {
+  color: #ffffff;
+}
+.linksUl div {
+  position: relative;
+  background: #00ced1;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 2.5rem;
+  text-align: center;
+}
+.linksUl div span {
+  position: relative;
+  transition: 0.2s;
+}
+.linksUl div:nth-child(1) {
+  width: 10rem;
+  height: 2.5rem;
+}
+.linksUl div:nth-child(2) {
+  width: 2.5rem;
+  height: 2.5rem;
+  left: -0.25rem;
+}
+.linksUl div:nth-child(1) div, .linksUl a div:nth-child(2) div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.linksUl div:nth-child(1) div {
+  background: #00ced1;
+}
+.linksUl div:nth-child(2) div {
+  background: #ffffff;
+}
+.linksUl div:nth-child(1) div:before, .linksUl a div:nth-child(2) div:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+.linksUl div:nth-child(1) div:before {
+  background: #ffffff;
+}
+.linksUl div:nth-child(2) div:before {
+  background: #00ced1;
+}
+.linksUl a:hover div:nth-child(1) div:before {
+  transform: translateX(-100%);
+}
+.linksUl a:hover div:nth-child(2) div:before {
+  transform: translateX(100%);
+}
+.linksUl a div:nth-child(1) span {
+  z-index: 1;
+  color: #00ced1;
+}
+.linksUl a:hover div:nth-child(1) span {
+  z-index: 1;
+  color: #ffffff;
+}
+.linksUl a div:nth-child(2) span {
+  z-index: 1;
+  color: #ffffff;
+}
+.linksUl a:hover div:nth-child(2) span {
+  z-index: 1;
+  color: #00ced1;
+}
+
+.aboutheading {
+  border-bottom: 0.0625rem solid #00ced1;
+  padding-top: 3.125rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../img/assists/gradii.jpg") fixed no-repeat center/cover;
+  height: 20rem;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.aboutbody {
+  padding: 0.75rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.75rem;
+}
+.aboutbody .aboutimage {
+  float: right;
+  margin-left: 1rem;
+}
+.aboutbody .aboutimage img {
+  border-radius: 50%;
+  width: 15rem;
+  height: 15rem;
+}
+
+.adminloginheading {
+  font-size: 4rem;
+  color: #0a0438;
+  text-align: center;
+  color: #00ced1;
+}
+
+.adminloginsection {
+  padding: 1rem 0rem;
+}
+.adminloginsection .loginform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 27rem;
+  color: #00ced1;
+  font-size: 2rem;
+}
+.adminloginsection .loginform div {
+  width: 100%;
+}
+.adminloginsection .loginform div .loginusername, .adminloginsection .loginform div .loginbtn, .adminloginsection .loginform div .loginpassword {
+  padding: 0.5625rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  transition: ease-in 0.3s;
+  color: #0a0438;
+  letter-spacing: 0.4rem;
+  font-weight: bold;
+}
+.adminloginsection .loginform div .loginusername:focus, .adminloginsection .loginform div .loginbtn:focus, .adminloginsection .loginform div .loginpassword:focus {
+  background-color: #c1f3f4;
+}
+.adminloginsection .loginform div .loginusername, .adminloginsection .loginform div .loginbtn, .adminloginsection .loginform div .loginpassword {
+  background-color: #ffffff;
+}
+.adminloginsection .loginform div .loginbtn {
+  background-color: #0a0438;
+  color: #ffffff;
+  cursor: pointer;
+}
+.adminloginsection .loginform div .loginbtn:focus {
+  background-color: #0a0438;
+}
+.adminloginsection .loginform div .loginbtn:hover {
+  background-color: #00ced1;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .loginform {
+    font-size: 1.5rem !important;
+    height: 20rem !important;
+  }
+  .loginform div {
+    width: 70% !important;
+  }
+}
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .loginform div {
+    width: 50% !important;
+  }
+}
+.basketball {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../img/assists/usaoi.jpg") no-repeat center/cover;
+}
+
+.contactheading {
+  border-bottom: 0.0625rem solid #00ced1;
+  padding-top: 3.125rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../../img/assists/galleryii.jpg") no-repeat center/cover;
+  height: 20rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.contactinfo {
+  padding: 0.75rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  background-color: #ffffff;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.75rem;
+}
+.contactinfo .contactdetails, .contactinfo .contactform {
+  padding: 0.75rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  width: 100%;
+}
+.contactinfo .contactdetails h2, .contactinfo .contactform h2 {
+  text-align: center;
+}
+.contactinfo .contactdetails h3, .contactinfo .contactform h3 {
+  font-size: 1.5rem;
+  color: #00ced1;
+}
+.contactinfo .contactdetails .info, .contactinfo .contactform .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.contactinfo .contactform h2 {
+  text-align: center;
+}
+.contactinfo .contactform form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.5625rem;
+}
+.contactinfo .contactform form .contactname, .contactinfo .contactform form .emailphone, .contactinfo .contactform form .contactmessage, .contactinfo .contactform form .contactsend, .contactinfo .contactform form .contactemail, .contactinfo .contactform form .contactphone {
+  width: 100%;
+}
+.contactinfo .contactform form .contactname .nameinput, .contactinfo .contactform form .contactname .messageinput, .contactinfo .contactform form .contactname .emailinput, .contactinfo .contactform form .contactname .phoneinput, .contactinfo .contactform form .contactname .sendbtn, .contactinfo .contactform form .emailphone .nameinput, .contactinfo .contactform form .emailphone .messageinput, .contactinfo .contactform form .emailphone .emailinput, .contactinfo .contactform form .emailphone .phoneinput, .contactinfo .contactform form .emailphone .sendbtn, .contactinfo .contactform form .contactmessage .nameinput, .contactinfo .contactform form .contactmessage .messageinput, .contactinfo .contactform form .contactmessage .emailinput, .contactinfo .contactform form .contactmessage .phoneinput, .contactinfo .contactform form .contactmessage .sendbtn, .contactinfo .contactform form .contactsend .nameinput, .contactinfo .contactform form .contactsend .messageinput, .contactinfo .contactform form .contactsend .emailinput, .contactinfo .contactform form .contactsend .phoneinput, .contactinfo .contactform form .contactsend .sendbtn, .contactinfo .contactform form .contactemail .nameinput, .contactinfo .contactform form .contactemail .messageinput, .contactinfo .contactform form .contactemail .emailinput, .contactinfo .contactform form .contactemail .phoneinput, .contactinfo .contactform form .contactemail .sendbtn, .contactinfo .contactform form .contactphone .nameinput, .contactinfo .contactform form .contactphone .messageinput, .contactinfo .contactform form .contactphone .emailinput, .contactinfo .contactform form .contactphone .phoneinput, .contactinfo .contactform form .contactphone .sendbtn {
+  height: 2.7rem;
+  outline: none;
+  border: 0.046875rem solid #00ced1;
+  border-radius: 0.375rem;
+  resize: none;
+  font-weight: bold;
+  width: inherit;
+  padding-left: 0.5625rem;
+}
+.contactinfo .contactform form .contactname .messageinput, .contactinfo .contactform form .emailphone .messageinput, .contactinfo .contactform form .contactmessage .messageinput, .contactinfo .contactform form .contactsend .messageinput, .contactinfo .contactform form .contactemail .messageinput, .contactinfo .contactform form .contactphone .messageinput {
+  height: 7rem;
+}
+.contactinfo .contactform form .contactname input:focus, .contactinfo .contactform form .contactname textarea:focus, .contactinfo .contactform form .emailphone input:focus, .contactinfo .contactform form .emailphone textarea:focus, .contactinfo .contactform form .contactmessage input:focus, .contactinfo .contactform form .contactmessage textarea:focus, .contactinfo .contactform form .contactsend input:focus, .contactinfo .contactform form .contactsend textarea:focus, .contactinfo .contactform form .contactemail input:focus, .contactinfo .contactform form .contactemail textarea:focus, .contactinfo .contactform form .contactphone input:focus, .contactinfo .contactform form .contactphone textarea:focus {
+  outline: none;
+  background-color: #c1f3f4;
+}
+.contactinfo .contactform form .emailphone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.contactinfo .contactform form .sendbtn {
+  width: 100%;
+  padding: 0.5625rem;
+  background-color: #0a0438;
+  color: #ffffff;
+  font-weight: 1000;
+  font-family: garamond;
+  letter-spacing: 0.4rem;
+  transition: ease-in 0.4s;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+}
+.contactinfo .contactform form .sendbtn:hover {
+  background-color: #00ced1;
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .contactinfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .contactinfo .contactdetails, .contactinfo .contactform {
+    width: 40%;
+  }
+  .contactinfo .contactform {
+    width: 60%;
+  }
+}
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .emailphone {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row !important;
+  }
+}
+.goback a {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.adminbuttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.adminbuttons button {
+  background-color: #0a0438;
+  color: #ffffff;
+  padding: 0.5625rem;
+  cursor: pointer;
+  transition: ease-in 0.4s;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.4rem 0.2rem;
+  border: none;
+  cursor: pointer;
+}
+.adminbuttons .logoutbtn button {
+  background-color: #f00303;
+}
+
+.up {
+  margin-bottom: 10rem;
+  height: 70vh;
+}
+.up .adminactionbtns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 20rem;
+  justify-content: space-between;
+}
+.up .adminactionbtns li a[href$=gallerypage] button {
+  display: block;
+}
+.up .adminactionbtns li a[href$=gallerypage] button:first-child {
+  margin-bottom: 1rem;
+}
+.up .adminactionbtns li button {
+  background-color: #0a0438;
+  color: #ffffff;
+  padding: 0.5625rem;
+  cursor: pointer;
+  transition: ease-in 0.4s;
+  font-weight: bold;
+  width: 15rem;
+  font-weight: bold;
+}
+.up .adminactionbtns li button:hover {
+  background-color: #00ced1;
+}
+
+.errorpage, .errorcredentials {
+  padding: 1rem 0rem;
+}
+.errorpage h2, .errorcredentials h2 {
+  font-size: 2rem;
+  color: #0a0438;
+  color: #f00303;
+}
+.errorpage .errorloginbtn, .errorcredentials .errorloginbtn {
+  background-color: #0a0438;
+  color: #ffffff;
+  padding: 0.5625rem;
+  cursor: pointer;
+  transition: ease-in 0.4s;
+  font-weight: bold;
+  color: #ffffff;
+}
+.errorpage .errorloginbtn:hover, .errorcredentials .errorloginbtn:hover {
+  background-color: #00ced1;
+}
+
+.adminformdiv {
+  padding: 1rem 0rem;
+  padding-bottom: 5rem;
+}
+.adminformdiv form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.adminformdiv form div {
+  width: 90%;
+  font-size: 1.5rem;
+}
+.adminformdiv form div .admininput {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.5rem;
+}
+.adminformdiv form div #submit {
+  width: 100%;
+  padding: 0.5625rem;
+  background-color: #0a0438;
+  color: #ffffff;
+  font-weight: 1000;
+  font-family: garamond;
+  letter-spacing: 0.4rem;
+  transition: ease-in 0.4s;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  border-radius: 0;
+}
+.adminformdiv form div #submit:hover {
+  background-color: #00ced1;
+}
+.adminformdiv form div #submitdelete {
+  width: 100%;
+  padding: 0.5625rem;
+  background-color: #0a0438;
+  color: #ffffff;
+  font-weight: 1000;
+  font-family: garamond;
+  letter-spacing: 0.4rem;
+  transition: ease-in 0.4s;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #f00303;
+  color: #000000;
+  font-size: 1.5rem;
+  border-radius: 0;
+}
+.adminformdiv form div #submitdelete:hover {
+  color: #ffffff;
+}
+
+.datecreated {
+  padding: 0.2rem;
+  background-color: #ffffff;
+  color: #0a0438;
+}
+
+.adminupdatedeletebuttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.adminupdatedeletebuttons .updategalleryphoto, .adminupdatedeletebuttons .deletegalleryphoto {
+  background-color: #0a0438;
+  color: #ffffff;
+  padding: 0.4rem;
+  cursor: pointer;
+  transition: ease-in 0.4s;
+  font-weight: bold;
+}
+.adminupdatedeletebuttons .deletegalleryphoto {
+  background-color: #f00303;
+  color: #000000;
+}
+.adminupdatedeletebuttons .updategalleryphoto:hover, .adminupdatedeletebuttons .deletegalleryphoto:hover {
+  background-color: #00ced1;
+}
+.adminupdatedeletebuttons .deletegalleryphoto:hover {
+  background-color: #f00303;
+  color: #ffffff;
+}
+
+.galleryphotos {
+  columns: 10rem 1;
+  column-gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem 0rem;
+}
+.galleryphotos .galleryimage {
+  break-inside: avoid;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+}
+.galleryphotos .galleryimage figure {
+  display: flex;
+  flex-direction: column;
+}
+.galleryphotos .galleryimage figure img {
+  border-radius: 0.5rem 0.5rem 0 0;
+  width: 100%;
+}
+.galleryphotos .galleryimage figure figcaption {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.4392156863);
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  padding: 0.5625rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .galleryphotos {
+    columns: 10rem 5;
+  }
+}
+.hero {
+  padding: 0.75rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #ffffff;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.75rem;
+}
+.hero .heromessage {
+  width: 100%;
+}
+.hero .heromessage .messages {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.hero .heromessage a {
+  background-color: #0a0438;
+  color: #ffffff;
+  padding: 0.5625rem;
+  cursor: pointer;
+  transition: ease-in 0.4s;
+  font-weight: bold;
+  padding: 0.75rem;
+  font-size: 1.5rem;
+}
+.hero .heromessage a:hover {
+  background-color: #00ced1;
+  color: #0a0438;
+}
+.hero img {
+  border-radius: 0.5rem;
+}
+.hero figcaption {
+  color: #0a0438;
+}
+
+.skill {
+  padding: 0.75rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.75rem;
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../img/assists/gradiii.jpg") fixed no-repeat center/cover;
+}
+.skill .business, .skill .data, .skill .advert {
+  padding: 0.75rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 1.125rem;
+}
+.skill .business .iconheading, .skill .data .iconheading, .skill .advert .iconheading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skill .business .iconheading .icon, .skill .business .iconheading .contact form .inputs .icontext, .contact form .inputs .skill .business .iconheading .icontext, .skill .data .iconheading .icon, .skill .data .iconheading .contact form .inputs .icontext, .contact form .inputs .skill .data .iconheading .icontext, .skill .advert .iconheading .icon, .skill .advert .iconheading .contact form .inputs .icontext, .contact form .inputs .skill .advert .iconheading .icontext {
+  font-size: 4rem;
+}
+.skill .business, .skill .advert {
+  background: #ffffff;
+}
+.skill .data {
+  background: #00ced1;
+  color: #ffffff;
+}
+
+.contact {
+  padding: 0.75rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.75rem;
+}
+.contact form {
+  padding: 0.75rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.contact form .inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: flex-start;
+  width: 100%;
+}
+.contact form .inputs .fullname, .contact form .inputs .email, .contact form .inputs .message {
+  outline: none;
+  width: 17rem;
+  border: 0.046875rem solid #00ced1;
+  border-radius: 0 0.5rem 0.5rem 0;
+  resize: none;
+  font-weight: bold;
+}
+.contact form .inputs .icon, .contact form .inputs .icontext, .contact form .inputs .fullname, .contact form .inputs .email {
+  height: 2.7rem;
+}
+.contact form .inputs input:focus, .contact form .inputs textarea:focus {
+  outline: none;
+  background-color: #c1f3f4;
+  border: none;
+}
+.contact form .inputs .icon, .contact form .inputs .icontext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #00ced1;
+  width: 2.5rem;
+  border: 0.046875rem solid #00ced1;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.contact form .inputs .icontext, .contact form .inputs .message, .contact form .inputs .textarea {
+  height: 7rem;
+}
+.contact form .inputsend {
+  width: 100%;
+}
+.contact form .inputsend .send {
+  width: 100%;
+  padding: 0.5625rem;
+  background-color: #0a0438;
+  color: #ffffff;
+  font-weight: 1000;
+  font-family: garamond;
+  letter-spacing: 0.4rem;
+  transition: ease-in 0.4s;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+}
+.contact form .inputsend .send:hover {
+  background-color: #00ced1;
+}
+.contact img {
+  border-radius: 0.5rem 0.5rem 0 0;
+  width: 15rem;
+}
+.contact figcaption {
+  background-color: #25d366;
+  color: #ffffff;
+  width: 15rem;
+  text-align: center;
+  padding: 0.5625rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .hero .heromessage {
+    width: 70%;
+  }
+  .skill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../img/assists/gradi.jpg") fixed no-repeat center/cover;
+  }
+  .skill .business, .skill .data, .skill .advert {
+    width: 30%;
+  }
+  .contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .contact form {
+    width: 100%;
+  }
+  .contact form .fullname, .contact form .email, .contact form .message {
+    width: 24rem;
+  }
+}
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .fullname, .email, .message {
+    width: 35rem !important;
+  }
+}
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+  .fullname, .email, .message {
+    width: 45rem !important;
+  }
+}
+.resumeheading, .summary, .skills, .experience, .education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background-color: #ffffff;
+  padding-bottom: 7rem;
+}
+.resumeheading li, .summary li, .skills li, .experience li, .education li {
+  list-style-type: disc;
+}
+
+.resumehead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #ffffff;
+}
+.resumehead .headlines {
+  height: 0.1rem;
+  background-color: #0a0438;
+  width: 100%;
+}
+
+.resumeheading {
+  text-align: center;
+}
+
+.summary {
+  text-align: center;
+}
+
+.experience {
+  align-items: center;
+  gap: 2rem;
+}
+.experience article {
+  width: 90%;
+}
+.experience article .experiencehead {
+  text-align: center;
+}
+.experience article .experiencehead .h3 {
+  font-size: 1.5rem;
+}
+
+.resumeheadd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #ffffff;
+}
+.resumeheadd .headlinez {
+  height: 0.1rem;
+  background-color: #0a0438;
+  width: 10%;
+}
+.resumeheadd h2 {
+  width: 70%;
+}
+
+.education {
+  text-align: center;
+}
+.education strong {
+  font-size: 1.5rem;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .skills article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+  .resumeheadd .headlinez {
+    width: 40%;
+  }
+  .resumeheadd h2 {
+    width: 50%;
+  }
+}
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .skills article {
+    gap: 10rem;
+  }
+  .resumeheadd h2 {
+    width: 20%;
+  }
+}
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .skills article {
+    gap: 20rem;
+  }
+}
+/*Extra large devices (large desktops, 1200px and up)*/
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,29 @@
+<section class="up">
+  
+  <div class="goback"> <a href="/admingallerypage">&larr; Back</a> </div>
+
+  <div> <h2> Update Photo </h2> </div>
+
+  <div class="adminformdiv">
+
+    <form action="/updategallerypage/<%= photos._id %>" enctype="multipart/form-data"  method="POST">
+      <div>
+        <label for="galleryimage caption"> <b> Photo Caption </b> </label>
+        <input type="text" name="galleryimagecaption" id="galleryimagecaption" class="admininput" value="<%= photos.galleryimagecaption %>" placeholder="Photo caption ...." />
+      </div>
+
+      <div>
+        <label for="galleryimage"> Choose Photo </label>
+        <input type="file" name="galleryimage" id="galleryimage" class="admininput" accept="image/*" />
+        <img src="/img/uploads/gallerypage/<%= photos.galleryimage %>" alt="<%= photos.galleryimagecaption %>" width="275" height="200" />
+
+        <input type="hidden" name="oldimage" id="oldimage" value="<%= photos.galleryimage %>">
+      </div>
+      
+      <div> <input type="submit" name="submit" value="Update Photo" id="submit" /> </div>
+  
+    </form>
+
+  </div>
+
+</section>

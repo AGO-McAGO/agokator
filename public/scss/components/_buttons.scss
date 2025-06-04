@@ -1,0 +1,26 @@
+@mixin formsendbutton {
+  width: 100%;
+  padding: $padding-sm;
+  background-color: $accent;
+  color: $dominant;
+  font-weight: 1000;
+  font-family: $font-familyii;
+  letter-spacing: 0.4rem;
+  transition: ease-in 0.4s;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: $base-border-radius;
+}
+
+@mixin formsendbuttonhover { background-color: $primary; }
+
+
+@mixin buttons {
+  background-color: $accent;
+  color: $dominant;
+  padding: $padding-sm;
+  cursor: pointer;
+  transition: ease-in 0.4s;
+  font-weight: bold;
+}

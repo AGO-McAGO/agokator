@@ -1,0 +1,110 @@
+<section class="hero">
+
+    <% homeHeroSection.forEach( heroitem => { %>
+        <div class="heromessage">
+            <h1> <%= heroitem.heroheading %> </h1>
+            <div class="messages">
+                <p> <%- heroitem.herotext %> </p>
+
+                <br />
+
+                <p> Plan on improving your business with outstanding data and business analysis, and magnificent advertising? </p>
+
+                <br />
+                
+                <p> Do you plan on identifying new opportunities and develop innovative solutions for your business? </p>
+            </div>
+            <a href="#contactme"> Contact Me </a>
+        </div>
+
+        <div class="heroimage">
+            <figure>
+                <img id="heroimage" src="img/uploads/homepage/<%= heroitem.heroimage %>" alt="Picture of AGO Kator Celdric" width="320" height="299" />
+                <figcaption> <h3> AGO Kator Celdric </h3> <%= heroitem.heroimagecaption %> </figcaption>
+            </figure>
+        </div>
+
+    <% } ); %>
+
+</section>
+
+<section class="skill">
+
+    <div class="business">
+        <div class="iconheading"> <span class="icon"> <i class="fa-solid fa-chart-line"></i> </span> <span> <h2> Business Analysis </h2> </span> </div>
+        <div>
+            <p> Help with identifying your business needs and addressing them. </p> <br />
+            <p> Check and identify bottlenecks, and look for opportunities for improvement. </p> <br />
+            <p> Provide help implementing changes, ensuring that solutions are effectively integrated into your business in order to improved efficiency. </p> <br />
+            <p> Help with optimizing operations and minimizing the likelihood of project failures. </p>
+        </div>
+    </div>
+
+    <div class="data">
+        <div class="iconheading"> <span class="icon"> <i class="fa-solid fa-magnifying-glass-chart"></i> </span> <span> <h2> Data Analysis </h2> </span> </div>
+        <div>
+            <p> Gathering relevant data from various sources and ensuring the data is accurate, consistent, and free from errors or inconsistencies. </p> <br />
+            <p> Presenting findings in a clear and understandable formats, helping you with insights to make informed decisions about investments, strategies, and projects. </p>
+        </div>
+    </div>
+
+    <div class="advert">
+        <div class="iconheading"> <span class="icon"> <i class="fa-solid fa-radio"></i> </span> <span> <h2> Advertising </h2> </span> </div>
+        <div>
+            <p> Aggressively create awareness, generate interest, and stimulate demand for your product and or service. </p> <br />
+            <p> All will be done to persuade your target audience and gain new audience to purchase your product and or service, and form a positive opinion about your brand. </p>
+        </div>
+    </div>
+
+</section>
+
+<section class="contact" id="contactme">
+
+    <div class="form"> <!-- form -->
+
+        <div>
+            <h3> Get In Touch </h3>
+            <p> Leave A Message </p>
+        </div>
+        
+
+        <form action="https://formsubmit.co/celdrickator@gmail.com" method="POST">
+
+            <div class="inputs">
+                <div class="icon"> <i class="fa fa-user"></i> </div>
+                <div class="input"> <input type="text" name="fullname" id="fullname" class="fullname" placeholder="Full Name" required /> </div>
+            </div>
+            
+            <div class="inputs">
+                <div class="icon"> <i class="fa fa-envelope"></i> </div>
+                <div class="input"> <input type="email" name="email" id="email" class="email" placeholder="Email" required /> </div>
+            </div>
+
+            
+            <div class="inputs">
+                <div class="icontext"> <i class="fa fa-pencil"></i> </div>
+                <div class="textarea"> <textarea name="message" id="message" class="message" placeholder="Message" required></textarea> </div>
+            </div>
+
+            <!-- <input type="hidden" name="_next" value="https://agokator.onrender.com/emailthankyou"> -->
+            <input type="hidden" name="_subject" value="Email From Website Homepage!">
+            <input type="hidden" name="_captcha" value="false">
+            <!--! <input type="hidden" name="_autoresponse" value="Your message is recieved, response shortly."> won't work with forms that have reCAPTCHA disabled-->
+            <input type="hidden" name="_template" value="box">
+            
+            <div class="inputsend"> <input type="submit" value="Send" id="send" class="send" /> </div>
+
+        </form>
+
+    </div> <!-- form -->
+    
+    <div class="contactimage"> <!-- image -->
+        <a href="https://wa.me/15162035161" target="_blank">
+            <figure>
+                <img src="/img/assists/toorbahi.jpg" alt="Company Crested" width="200" height="275" class="img-fluid" />
+                <figcaption> Send WhatsApp Message </figcaption>
+            </figure>
+        </a>
+    </div> <!-- image -->
+
+</section>

@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; scroll-padding: 5rem; }
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-size: $base-font-size;
+  background: radial-gradient(at center, $primary, $white);
+  font-weight: bold;
+  font-family: $font-familyi;
+  line-height: 1.7;  
+  color: $darktext;
+}
+#adminbody { background: radial-gradient(at center, $accent, $tertiary); }
+
+.header, main, footer, .center { @include center; }
+
+ul { padding: 0; list-style-type: none; }
+li { list-style-type: none; }
+
+a { text-decoration: none; }
+.active { text-decoration: underline; }
+
+img { max-width: 100%; height: auto; }

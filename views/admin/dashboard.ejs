@@ -1,0 +1,22 @@
+<section class="up">
+  
+  <!-- <div> <a href="/addhomepage"> + Add Homepage Information </a> </div> -->
+  <!-- <div> <a href="/addcontactpage"> + Add Contact Information </a> </div> -->
+
+  <ul class="adminactionbtns">
+
+    <li>
+      <% heroSection.forEach( heroitem => { %> <a href="/updatehomepage/<%= heroitem._id %>"> <button> Update Homepage </button> </a> <% } ); %>
+    </li>
+
+    <li>
+      <% contacts.forEach( contact => { %> <a href="/updatecontactpage/<%= contact._id %>"> <button> Update Contact Information </button> </a> <% } ); %>
+    </li>
+
+    <li>
+      <a href="/addgallerypage"> <button> + Add Photo </button> </a> <a href="/admingallerypage"> <button> Update Photos </button> </a>
+    </li>
+
+  </ul>
+
+</section>

@@ -1,0 +1,58 @@
+.resumeheading, .summary, .skills, .experience, .education {
+  @include flexcolumn;
+  gap: 1rem;
+  padding: $base-padding;
+  background-color: $white;
+  padding-bottom: 7rem;
+
+  li { list-style-type: disc; }
+}
+
+.resumehead {
+  @include flexrow;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: $white;
+
+  .headlines { height: 0.1rem; background-color: $accent; width: 100%; }
+}
+
+.resumeheading {
+  text-align: center;
+}
+
+.summary { text-align: center; }
+
+.experience {
+  align-items: center;
+  gap: 2rem;
+
+  article {
+    width: 90%;
+
+    .experiencehead {
+      text-align: center;
+
+      .h3 { font-size: $font-size-lg; }
+    }
+  }
+}
+
+.resumeheadd {
+  @include flexrow;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: $white;
+
+  .headlinez { height: 0.1rem; background-color: $accent; width: 10%; }
+
+  h2 { width: 70%;}
+}
+
+.education {
+  text-align: center;
+
+  strong { font-size: $font-size-lg; }
+}
+
+@import "resumepagemq";

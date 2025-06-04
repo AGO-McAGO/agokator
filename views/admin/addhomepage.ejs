@@ -1,0 +1,36 @@
+<section class="up">
+  
+  <div class="goback"> <a href="/dashboard">&larr; Back</a> </div>
+
+  <div> <h2> Add Information To The Home Page </h2> </div>
+
+  <div>
+
+    <form action="/addhomepage" enctype="multipart/form-data"  method="POST">
+
+      <div>
+        <label for="heroheading"> <b> Heading </b> </label>
+        <input type="text" name="heroheading" id="heroheading"  placeholder="Welcome heading ...." />
+      </div>
+
+      <div>
+        <label for="herotext"> <b> Welcome Paragraph Text </b> </label>
+        <textarea name="herotext" id="herotext" cols="50" rows="10" placeholder="Message here ...."> </textarea>
+      </div>
+
+      <div>
+        <label for="heroimage caption"> <b> Photo Caption </b> </label>
+        <input type="text" name="heroimagecaption" id="heroimagecaption"  placeholder="Photo caption ...." />
+      </div>
+
+      <div class="col">
+        <label for="heroimage"> Choose Photo </label>
+        <input type="file" name="heroimage" id="heroimage" accept="image/*" required>
+      </div>
+      
+      <div> <input type="submit" name="submit" value="Add Information" id="submit" /> </div>
+  
+    </form>
+  </div>
+
+</section>

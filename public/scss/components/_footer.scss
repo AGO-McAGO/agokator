@@ -1,0 +1,98 @@
+footer {
+  @include flexcolumn;
+  padding: $paddingvertical;
+  margin-top: 5rem;
+
+  .socialmedia {
+    width: 100%;
+    font-size: $font-size-xl;
+    text-align: center;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+      align-content: space-between;
+      padding: $paddingvertical;
+      
+      li {
+        @include flexcolumn;
+        justify-content: center;
+        z-index: 1;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.7, -0.55, 0.271, 2.55);
+        
+        .tooltip {
+          position: absolute;
+          top: 0;
+          font-size: $base-font-size;
+          background-color: $dominant;
+          color: $dominant;
+          border-radius: 0.4rem;
+          padding: 0.2rem 1.5rem;
+          box-shadow: 0 0.7rem 0.7rem rgba( 0, 0, 0, 0.5 );
+          text-align: center;
+          opacity: 0;
+          pointer-events: none;
+          transition: all 0.4s cubic-bezier(0.7, -0.55, 0.271, 2.55);
+        }
+        
+        .tooltip::before {
+          content: "";
+          position: absolute;
+          height: 1rem;
+          width: 1rem;
+          left: 50%;
+          bottom: -0.5rem;
+          transform: translateX(-50%) rotate(45deg);
+          background: $dominant;
+          pointer-events: none;
+          transition: all 0.4s cubic-bezier(0.7, -0.55, 0.271, 2.55);
+        }
+
+        .icon {
+          position: relative;
+          z-index: 1;
+          height: 3rem;
+          width: 3rem;
+          background-color: $dominant;
+          border-radius: 50%;
+          cursor: pointer;
+          box-shadow: 0 0.7rem 0.7rem rgba( 0, 0, 0, 0.1 );
+          text-align: center;
+          display: block;
+          transition: all 0.4s cubic-bezier(0.7, -0.55, 0.271, 2.55);
+
+          i { font-size: 2rem; transition: 0.4s; line-height: 1.8rem; }
+        }
+
+      }
+      
+      li:hover .tooltip { top: -2.99rem; opacity: 1; pointer-events: auto; }
+
+      li:hover i { color: $dominant; }
+
+      li:hover .icon, li:hover .tooltip { text-shadow: 0rem -0.07rem 0rem rgba( 0, 0, 0, 0.5 ); }
+
+      .linkedin { color: $linkedin; }
+      .whatsapp { color: $whatsapp; }
+      .xtwitter { color: $xtwitter; }
+      .twitter { color: $twitter; }
+      .instagram { color: $instagram; }
+      .facebook { color: $facebook; }
+      
+      .linkedin:hover .icon, .linkedin:hover .tooltip, .linkedin:hover .tooltip:before { background-color: $linkedin; }
+      .whatsapp:hover .icon, .whatsapp:hover .tooltip, .whatsapp:hover .tooltip:before { background-color: $whatsapp; }
+      .xtwitter:hover .icon, .xtwitter:hover .tooltip, .xtwitter:hover .tooltip:before { background-color: $xtwitter; }
+      .twitter:hover .icon, .twitter:hover .tooltip, .twitter:hover .tooltip:before { background-color: $twitter; }
+      .instagram:hover .icon, .instagram:hover .tooltip, .instagram:hover .tooltip:before { background-color: $instagram; }
+      .facebook:hover .icon, .facebook:hover .tooltip, .facebook:hover .tooltip:before { background-color: $facebook; }
+
+    }
+  
+  }
+
+}

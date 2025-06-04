@@ -1,0 +1,40 @@
+<section class="up">
+
+  <div class="goback"> <a href="/dashboard">&larr; Back</a> </div>
+
+  <div> <h2> Upadte Home Page </h2> </div>
+
+  <div class="adminformdiv">
+
+    <form action="/updatehomepage/<%= data._id %>" enctype="multipart/form-data"  method="POST">
+
+      <div>
+        <label for="heading"> <b> Heading </b> </label>
+        <input type="text" name="heading" id="heroheading" value="<%= data.heroheading %>" class="admininput" placeholder="Welcome heading ...." />
+      </div>
+
+      <div>
+        <label for="herotext"> <b> Welcome Paragraph </b> </label>
+        <textarea name="herotext" id="herotext" cols="40" rows="10" class="admininput"> <%= data.herotext %> </textarea>
+      </div>
+
+      <div>
+        <label for="heroimagecaption"> <b> Photo Caption </b> </label>
+        <input type="text" name="heroimagecaption" id="heroimagecaption" value="<%= data.heroimagecaption %>" class="admininput" placeholder="Photo caption ...." />
+      </div>
+
+      <div>
+        <label for="heroimage"> Welcome Photo </label>
+        <input type="file" name="heroimage" id="heroimage" class="admininput" accept="image/*" />
+        <img src="/img/uploads/homepage/<%= data.heroimage %>" alt="Picture of AGO Kator Celdric" width="250" height="200" />
+
+        <input type="hidden" name="oldimage" id="oldimage" value="<%= data.heroimage %>">
+      </div>
+    
+      <div class="heroupdate"> <input type="submit" value="Update" id="submit" /> </div>
+    
+    </form>
+
+  </div>
+
+</section>

@@ -1,0 +1,26 @@
+header {
+  position: sticky;
+  top: 0;
+  background-color: $white;
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .5));
+
+  .header {
+    @include flexrow;
+    z-index: 4;
+
+    .logoul {
+      @include flexrow;
+      justify-content: flex-start;
+      gap: 0.2rem;
+      z-index: 4;
+    
+      img { border-radius: $base-border-radius; height: 5rem; }
+
+      .name {
+        color: $white;
+        text-shadow: 1px 1px 2px $accent, 0 0 25px $tertiary, 0 0 5px $primary;
+        letter-spacing: 0.1rem;
+      }
+    }
+  }
+}

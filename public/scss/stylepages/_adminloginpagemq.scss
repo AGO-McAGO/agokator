@@ -1,0 +1,19 @@
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  
+  .loginform {
+    font-size: $font-size-lg !important;
+    height: 20rem !important;
+
+    div { width: 70% !important; }
+
+  }
+
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  
+  .loginform div { width: 50% !important; }
+
+}

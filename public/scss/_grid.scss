@@ -1,0 +1,7 @@
+//the grid items/boxes will stack when the screen size hits "200px".
+@mixin responsivegrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.7rem;
+    align-items: start;
+  }

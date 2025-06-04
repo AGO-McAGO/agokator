@@ -1,0 +1,18 @@
+<!-- <section> <h1> Gallery </h1> </section> -->
+
+<section class="galleryphotos">
+
+  <% photos.forEach( photo => { %>
+
+    <div class="galleryimage">
+
+      <figure>
+        <img id="galleryphoto" src="img/uploads/gallerypage/<%= photo.galleryimage %>" alt="<%= photo.galleryimagecaption %>" width="320" height="299" />
+        <figcaption> <%= photo.galleryimagecaption %> </figcaption>
+      </figure>
+      
+    </div>
+
+  <% } ); %>
+
+</section>

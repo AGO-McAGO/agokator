@@ -1,0 +1,26 @@
+<section class="up">
+  
+  <div class="goback"> <a href="/dashboard">&larr; Back</a> </div>
+
+  <div> <h2> Add Photo To Gallery </h2> </div>
+
+  <div class="adminformdiv">
+
+    <form action="/addgallerypage" enctype="multipart/form-data"  method="POST">
+      <div>
+        <label for="galleryimage caption"> <b> Photo Caption </b> </label>
+        <input type="text" name="galleryimagecaption" id="galleryimagecaption" class="admininput" placeholder="Photo caption ...." />
+      </div>
+
+      <div class="col">
+        <label for="galleryimage"> Choose Photo </label>
+        <input type="file" name="galleryimage" id="galleryimage" class="admininput" accept="image/*">
+      </div>
+      
+      <div> <input type="submit" name="submit" value="Upload Photo" id="submit" /> </div>
+  
+    </form>
+
+  </div>
+
+</section>

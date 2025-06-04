@@ -1,0 +1,9 @@
+.errorpage, .errorcredentials {
+  padding: $paddingvertical;
+
+  h2 { font-size: $font-size-xl; color: $accent; color: $error; }
+
+  .errorloginbtn { @include buttons; color: $dominant; }
+  .errorloginbtn:hover { @include formsendbuttonhover; }
+
+}

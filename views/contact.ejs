@@ -1,0 +1,66 @@
+<section class="contactheading">
+    <h1> Contact AGO Kator Celdric </h1>
+    <p> Leave me a message and or drop your contact and I will get back to you immediately. </p>
+</section>
+
+<section class="contactinfo">
+    
+    <div class="contactdetails">
+        <h2> Get In Touch </h2>
+        <p> Please reach me through any of these channels, thank you. </p>
+
+        <article class="info">
+            <% contact.forEach( contactitem => { %>
+                <article>
+                    <h3> <span class="infoicon"> <i class="fa-solid fa-house-chimney"></i> </span> Address </h3>
+                    <p> <%= contactitem.homeaddress %>. </p>
+                </article>
+            
+                <article>
+                    <h3> <span class="infoicon"> <i class="fa-solid fa-envelopes-bulk"></i> </span> Email </h3>
+                    <p> <%= contactitem.emailaddress %> </p>
+                </article>
+            
+                <article>
+                    <h3> <span class="infoicon"> <i class="fa-solid fa-phone-volume"></i> </span> Phone </h3>
+                    <p> <%= contactitem.phonenumber %> </p>
+                </article>
+    
+            <% } ); %>
+        
+        </article>
+    
+    </div>
+
+    <div class="contactform">
+
+        <h2> Please Fill Out This Form To Leave A Message </h2>
+
+        <hr />
+        
+        <article>
+            <form action="https://formsubmit.co/celdrickator@gmail.com" method="POST">
+
+                <div class="contactname"> <input type="text" name="fullname" id="name" class="nameinput" placeholder="Full Name" required /> </div>
+
+                <div class="emailphone">
+                    <div class="contactemail"> <input type="email" name="email" id="email" class="emailinput" placeholder="Email" required /> </div>
+                    <div class="contactphone"> <input type="text" name="phonenumber" id="phone" class="phoneinput" placeholder="Phone" /> </div>
+                </div>
+
+                <div class="contactmessage"> <textarea name="message" class="messageinput" placeholder="Message" required></textarea> </div>
+
+                <!-- <input type="hidden" name="_next" value="https://agokator.onrender.com/emailthankyou"> -->
+                <input type="hidden" name="_subject" value="Email From Website Contact page!">
+                <input type="hidden" name="_captcha" value="false">
+                <!--! <input type="hidden" name="_autoresponse" value="Your message is recieved, response shortly."> won't work with forms that have reCAPTCHA disabled-->
+                <input type="hidden" name="_template" value="box">
+
+                <div class="contactsend"> <input type="submit" value="Send" class="sendbtn" /> </div>
+
+            </form>
+        </article>
+    
+    </div>
+
+</section>

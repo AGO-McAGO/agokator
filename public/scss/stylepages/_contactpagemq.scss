@@ -1,0 +1,20 @@
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    
+    .contactinfo {
+        @include flexrow;
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 2rem;
+        
+        .contactdetails { width: 40%; }
+        
+        .contactform { width: 60%; }
+    }
+
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .emailphone { @include flexrow; flex-direction: row !important; }
+}
